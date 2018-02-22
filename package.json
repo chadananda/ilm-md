@@ -21,6 +21,7 @@
     "markdown-it-inline-comments": "^1.0.1",
     "markdown-it-replacements": "^1.0.1",
     "markdown-it-table-of-contents": "^0.3.3",
+    "markdown-it-toc-ilm": "^0.3.3",
     "markdown-it-underline": "^1.0.1",
     "minifyify": "^7.3.5",
     "uglifyify": "^4.0.5",

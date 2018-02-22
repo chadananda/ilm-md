@@ -9,7 +9,7 @@ var markdownItAttrs = require('markdown-it-attrs')
 // var markdownItReplacements = require('markdown-it-replacements')  
 //var markdownItUnderline = require('markdown-it-underline') 
 var markdownItFootnote = require('markdown-it-footnote') 
-var markdownItTableOfContents = require('markdown-it-table-of-contents') 
+var markdownItTableOfContents = require('markdown-it-toc-ilm') // my custom version
 
 var md = require('markdown-it')({
     html: true,
