@@ -1,0 +1,47 @@
+{
+  "name": "ilm-md",
+  "version": "1.0.0",
+  "description": "ILM Markdown Parser",
+  "main": "main.js",
+  "scripts": {
+    "watch": "npm-watch build_inline_debug",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build_min": "browserify -g uglifyify main.js -o dist/ilm-md.min.js",
+    "build_inline": "browserify -g uglifyify inline.js -o dist/ilm-md-inline.min.js",
+    "build_inline_debug": "browserify --debug inline.js -o dist/ilm-md-inline-debug.js",
+    "build": "npm run build_min && npm run build_inline",
+    "start": "concurrently \"npm run watch\" \"reload -b\""
+  },
+  "author": "Chad Jones <chadananda@gmail.com> (http://bahai-education.org/)",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-it": "^8.4.1",
+    "markdown-it-attrs": "^1.2.1",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-inline-comments": "^1.0.1",
+    "markdown-it-replacements": "^1.0.1",
+    "markdown-it-table-of-contents": "^0.3.3",
+    "markdown-it-underline": "^1.0.1",
+    "minifyify": "^7.3.5",
+    "uglifyify": "^4.0.5",
+    "yaml-front-matter": "^3.4.0"
+  },
+  "devDependencies": {
+    "browserify-css": "^0.14.0",
+    "concurrently": "^3.5.1",
+    "npm-watch": "^0.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-css"
+    ]
+  },
+  "watch": {
+    "build_inline": "*.js,*.css,*.html"
+  },
+  "keywords": [
+    "ilm",
+    "md",
+    "markdown"
+  ]
+}
