@@ -10,6 +10,8 @@ var markdownItAttrs = require('markdown-it-attrs')
 //var markdownItUnderline = require('markdown-it-underline') 
 var markdownItFootnote = require('markdown-it-footnote') 
 var markdownItTableOfContents = require('markdown-it-toc-ilm') // my custom version
+var markdownItAnchor = require('markdown-it-anchor') 
+var markdownItParnum = require('markdown-it-parnum')
 
 var md = require('markdown-it')({
     html: true,
@@ -18,9 +20,11 @@ var md = require('markdown-it')({
     quotes: '“”‘’',
   })
   .use(markdownItComments)
+  .use(markdownItAnchor)  
   //.use(markdownItReplacements)
   //.use(markdownItUnderline)
   //.use(markdownItFootnote)
+  .use(markdownItParnum)
   .use(markdownItTableOfContents, {
     "includeLevel": [2,3,4,5],
     "containerClass": 'toc',
@@ -56,10 +60,10 @@ module.exports = function(markdownText) {
     .replace(/\^[u]/g, 'ú').replace(/\^[U]/g, 'Ú')
     .replace(/\^[a]/g, 'á').replace(/\^[A]/g, 'Ú')
   // glyph dot-unders
-    .replace(/\.[h]/g, 'ḥ').replace(/\.[H]/g, 'Ḥ') 
-    .replace(/\.[s]/g, 'ṣ').replace(/\.[S]/g, 'Ṣ') 
-    .replace(/\.[d]/g, 'ḍ').replace(/\.[D]/g, 'Ḍ') 
-    .replace(/\.[t]/g, 'ṭ').replace(/\.[T]/g, 'Ṭ')  
+    .replace(/\.[h]/g, 'ḥ').replace(/(\s)\.[H]/g, '$1Ḥ') 
+    .replace(/\.[s]/g, 'ṣ').replace(/(\s)\.[S]/g, '$1Ṣ') 
+    .replace(/\.[d]/g, 'ḍ').replace(/(\s)\.[D]/g, '$1Ḍ') 
+    .replace(/\.[t]/g, 'ṭ').replace(/(\s)\.[T]/g, '$1Ṭ')  
   // glyph style ayn and hamza
     .replace(/\\6/g, '‘').replace(/\\9/g, '’') 
   // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)

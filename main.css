@@ -1,8 +1,13 @@
 html {
    padding: 0px;
-   padding-left: 20px; padding-right: 20px; 
+   padding-left: 40px; padding-right: 20px; 
 }
 body {display: none;}
+p,hr,h1,h2,h3,h4,h5 {
+  display: block; position: relative;
+  text-indent: 0; margin-left:0; margin-right:0;
+}
+h2,h3,h4,h5 {opacity: .85;}
 
 hr {
   display: block; border: 0; margin: 3em 0;   height: 35px;
@@ -51,11 +56,32 @@ hr {
 }
 
 
+/* number paragraph blocks unless .noid class*/
+p[pnum]:before {
+  font-family: GentiumPlus, 'Georgia', 'serif';
+  content: attr(pnum);
+  font-size: 10px; 
+  position: absolute; 
+  top: 0; left: -40px;  
+  font-style: normal;
+  color: gray; 
+}
+ 
+/*override position for rtl*/  
+p[pnum][dir="rtl"]:before {
+  right:-58px; left: 0; padding-right:15px; padding-left:0; direction: rtl;
+}
+
+.verse, .list {white-space: pre-line;}
+
+
 
 /* General Style Overrides */
+.blockquote {padding-left: 2em; padding-right: 2em;}
 .allcaps {text-transform: uppercase;}
 .smallcaps {font-variant: small-caps;}
 .center {text-align: center;}
 .left {text-align: left;}
 .right {text-align: right;}
+.hidden {display: none;}
 
