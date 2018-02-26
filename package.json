@@ -22,7 +22,7 @@
     "markdown-it-inline-comments": "^1.0.1",
     "markdown-it-parnum": "^1.0.38",
     "markdown-it-replacements": "^1.0.1",
-    "markdown-it-toc-ilm": "^0.3.5",
+    "markdown-it-toc-ilm": "^0.3.7",
     "markdown-it-underline": "^1.0.1",
     "minifyify": "^7.3.5",
     "uglifyify": "^4.0.5",
