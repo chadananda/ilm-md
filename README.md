@@ -52,7 +52,7 @@ This a paragraph with dropcaps and blockquote indent.
 {.dropcap .blockquote}
 ```
 
-Header Attributes include:
+#### Header Attributes include:
 
 * For document: .title .author .subtitle .copyright
 * For section numbering:  
@@ -64,7 +64,7 @@ Header Attributes include:
    * .toc1, .toc2, .toc3 to specify toc level
 * For formatting: .center .right
 
-Block Attributes include
+#### Block Attributes include
 
 * Formatting: .dropcap .blockquote .center .right 
 * List styles: .list .verse 

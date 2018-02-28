@@ -1,6 +1,6 @@
 {
   "name": "ilm-md",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ILM Markdown Parser",
   "main": "main.js",
   "scripts": {
