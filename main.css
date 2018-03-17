@@ -71,11 +71,14 @@ p[pnum]:before {
   color: gray; 
 }
 
-span[data-pg]:before {
-  content: "(" attr('data-pg') ")";
-  float: right;
+span[data-pg] {
+  position: absolute;
+  right: 0;
   color: gray;
   font-size: 70%;
+}
+span[data-pg]:before {
+  content: "(" attr('data-pg') ")"; 
 }
  
 /*override position for rtl*/  
