@@ -71,7 +71,7 @@ p[pnum]:before {
   color: gray; 
 }
 
-span[data-pg] {
+span[data-pg]:before {
   content: "(" attr('data-pg') ")";
   float: right;
   color: gray;
