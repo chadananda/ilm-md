@@ -71,6 +71,9 @@ module.exports = function(markdownText) {
     .replace(/\\6/g, '‘').replace(/\\9/g, '’')
    // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)
     .replace(/([^\\])\'([\S])/g, '$1‘$2') .replace(/([^\\])\'/g, '$1’')
+   // replace page marker
+    .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')
+    
 /**/
   ilm.html_body = html
   ilm.html = html
