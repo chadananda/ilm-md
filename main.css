@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya");
+
 html {
    padding: 0px;
    padding-left: 40px; padding-right: 20px; 
 }
-body {display: none; font-size: 120%;}
+body {display: none; 
+  font-size: 120%; font-family: 'Alegreya', serif;
+}
 p,hr,h1,h2,h3,h4,h5 {
   display: block; position: relative;
   text-indent: 0; margin-left:1em; margin-right:2em;
@@ -81,10 +85,8 @@ p[pnum][dir="rtl"]:before {
 
 .verse, .list {white-space: pre-line;}
 
-
-
 /* General Style Overrides */
-.blockquote {padding-left: 2em; padding-right: 2em;}
+.blockquote, .block, .bq {padding-left: 2em; padding-right: 2em;}
 .allcaps {text-transform: uppercase;}
 .smallcaps {font-variant: small-caps;}
 .center {text-align: center;}
