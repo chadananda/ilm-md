@@ -61,8 +61,8 @@ hr {
 
 
 /* number paragraph blocks unless .noid class*/
-p[pnum]:before {
-  font-family: GentiumPlus, 'Georgia', 'serif';
+p[pnum]::before {
+ /* font-family: GentiumPlus, 'Georgia', 'serif';*/
   content: attr(pnum);
   font-size: 10px; 
   position: absolute; 
@@ -71,14 +71,13 @@ p[pnum]:before {
   color: gray; 
 }
 
-span[data-pg] {
-  position: absolute;
-  right: 0;
-  color: gray;
-  font-size: 70%;
-}
-span[data-pg]:before {
-  content: "(" attr('data-pg') ")"; 
+span[data-pg]::before {
+  content: "pg " attr(data-pg);
+  font-size: 10px;  
+  position: absolute; 
+  right: -5em;  
+  font-style: normal;
+  color: gray; 
 }
  
 /*override position for rtl*/  
