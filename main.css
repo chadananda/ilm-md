@@ -2,7 +2,7 @@ html {
    padding: 0px;
    padding-left: 40px; padding-right: 20px; 
 }
-body {display: none;}
+body {display: none; font-size: 120%;}
 p,hr,h1,h2,h3,h4,h5 {
   display: block; position: relative;
   text-indent: 0; margin-left:0; margin-right:0;
