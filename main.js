@@ -19,10 +19,12 @@ var md = require('markdown-it')({
     typographer: true,
     quotes: '“”‘’',
   })
-  .use(markdownItComments)
+  //.use(markdownItComments)
   .use(markdownItAnchor)
+
   //.use(markdownItReplacements)
   //.use(markdownItUnderline)
+
   .use(markdownItFootnote)
   .use(markdownItParnum)
   .use(markdownItTableOfContents, {
@@ -52,7 +54,7 @@ module.exports = function(markdownText) {
   ilm.raw_content = ilm.attrs.__content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
   delete(ilm.attrs.__content)
   var html = md.render(ilm.raw_content)
-  /*
+
   // glyph underscores
     .replace(/_([kcgsdzt]h)[_]?/ig, '<u>$1</u>')
     .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
@@ -60,17 +62,16 @@ module.exports = function(markdownText) {
     .replace(/\^[i]/g, 'í').replace(/\^[I]/g, 'Í')
     .replace(/\^[u]/g, 'ú').replace(/\^[U]/g, 'Ú')
     .replace(/\^[a]/g, 'á').replace(/\^[A]/g, 'Ú')
-  // glyph dot-unders
+ // glyph dot-unders
     .replace(/\.[h]/g, 'ḥ').replace(/(\s)\.[H]/g, '$1Ḥ')
     .replace(/\.[s]/g, 'ṣ').replace(/(\s)\.[S]/g, '$1Ṣ')
     .replace(/\.[d]/g, 'ḍ').replace(/(\s)\.[D]/g, '$1Ḍ')
     .replace(/\.[t]/g, 'ṭ').replace(/(\s)\.[T]/g, '$1Ṭ')
   // glyph style ayn and hamza
     .replace(/\\6/g, '‘').replace(/\\9/g, '’')
-  // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)
-    .replace(/[^\\]\'([\S])/g, '‘$1').replace(/[^\\]\'/g, '’')
-  */
-
+   // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)
+    .replace(/([^\\])\'([\S])/g, '$1‘$2') .replace(/([^\\])\'/g, '$1’')
+/**/
   ilm.html_body = html
   ilm.html = html
   return ilm

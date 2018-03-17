@@ -1,6 +1,6 @@
 {
   "name": "ilm-md",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ILM Markdown Parser",
   "main": "main.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build_min": "browserify -g uglifyify main.js -o dist/ilm-md.min.js",
     "build_inline": "browserify -g uglifyify inline.js -o dist/ilm-md-inline.min.js",
     "build_inline_debug": "browserify --debug inline.js -o dist/ilm-md-inline-debug.js",
-    "build": "npm run build_min && npm run build_inline",
+    "build": "npm run build_min && npm run build_inline && npm run build_inline_debug",
     "start": "concurrently \"npm run watch\" \"reload -b\""
   },
   "author": "Chad Jones <chadananda@gmail.com> (http://bahai-education.org/)",
