@@ -86,7 +86,7 @@ module.exports = function(markdownText) {
     .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')    
     
 
-  html = bahaiAutocorrect.correct(html) 
+  bahaiAutocorrect.correct(html) 
 
 
     
