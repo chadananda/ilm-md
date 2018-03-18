@@ -47,7 +47,7 @@ hr {
 
 .ref, .reference,.sit, .sitalcent, .ed, .editor, .sig, .signature {white-space: pre-line;}
 .ref, .reference {
-  text-align: right; opacity: .75; font-size: .9em; font-style: italic; margin-top: -0.5em;
+  text-align: right; opacity: .75; font-size: .9em; font-style: italic; margin-top: -1em;
 }
 .sit, .sitalcent {
   text-align: left; opacity: .85; font-style: italic; font-size: 90%;
@@ -77,7 +77,7 @@ span[data-pg]::before {
   content: "pg " attr(data-pg);
   font-size: 10px;  
   position: absolute; 
-  right: -4em;  
+  right: -3.5em;  
   font-style: normal;
   color: gray; 
 }
