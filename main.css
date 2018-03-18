@@ -97,6 +97,7 @@ p[pnum][dir="rtl"]:before {
 .left {text-align: left;}
 .right {text-align: right;}
 .hidden {display: none;}
+.italic {font-style: italic;}
 
 .footnote-ref {color: gray; font-size: 50%;}
 
