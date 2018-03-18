@@ -58,8 +58,8 @@ module.exports = function(markdownText) {
   
   
   // glyph underscores
-  html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
-    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
+  // html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
+  //   .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
   
   html = md.render(html)
 

@@ -39,7 +39,7 @@ characters: Captain Ahab, Ishmael, Queequeg, Moby Dick, Captain Boomer, Starbuck
 
 Text can be split up into sections by use of the H2 header (indicated in Markdown by starting a line with ##).  
 
-### Block Classes
+### Block Classes {.likethis}
 
 Classes and attributes can be added to any text block Pandoc-style by appending a line with the list of classes, id and attributes. In the case of headers and sub-headers, these should be added on the same line. (Since Markdown does not support multi-line headers).
 
@@ -69,6 +69,18 @@ This a paragraph with dropcaps and blockquote indent.
 * Formatting: .dropcap .blockquote .center .right 
 * List styles: .list .verse 
 * Unnumbered types: .ed .sig .sit .noid
+
+### Footnotes
+
+* Footnotes are standard MD ([^#]) but are rendered as <aside> blocks immediately following the paragraph
+
+### Page Markers
+
+* The tag [pg #] or [pg#] will be rendered <span data-pg="#"></span>
+
+### Underscored transliterations 
+
+* K_h, D_h, T_h, C_h and Z_h will be rendered as <u>Kh</u>
 
  
 
