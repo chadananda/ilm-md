@@ -1,18 +1,18 @@
 "use strict";
 
 // var md = require('markdown-it')
-var jsyaml = require('yaml-front-matter')
-var css = require('./main.css')
+var jsyaml = require('yaml-front-matter');
+var css = require('./main.css');
 
-var markdownItComments = require('markdown-it-inline-comments')
-var markdownItAttrs = require('markdown-it-attrs')
+var markdownItComments = require('markdown-it-inline-comments');
+var markdownItAttrs = require('markdown-it-attrs');
 // var markdownItReplacements = require('markdown-it-replacements')
 //var markdownItUnderline = require('markdown-it-underline')
-var markdownItFootnote = require('markdown-it-footnote')
-var markdownItTableOfContents = require('markdown-it-toc-ilm') // my custom version
-var markdownItAnchor = require('markdown-it-anchor')
-var markdownItParnum = require('markdown-it-parnum')
-var bac = require('bahai-autocorrect')
+var markdownItFootnote = require('markdown-it-footnote');
+var markdownItTableOfContents = require('markdown-it-toc-ilm'); // my custom version
+var markdownItAnchor = require('markdown-it-anchor');
+var markdownItParnum = require('markdown-it-parnum');
+var bahaiAutocorrect = require('bahai-autocorrect');
 
 var md = require('markdown-it')({
     html: true,
@@ -58,29 +58,31 @@ module.exports = function(markdownText) {
   // replacements that must take place before MD parsing
   
   
-  // glyph underscores
+  // glyphs
   html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
-    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
-    
-  bac.correct(html) 
-  
-  html = md.render(html)
-
-  // glyph accents
-    .replace(/\^[i]/g, 'í').replace(/\^[I]/g, 'Í')
-    .replace(/\^[u]/g, 'ú').replace(/\^[U]/g, 'Ú')
-    .replace(/\^[a]/g, 'á').replace(/\^[A]/g, 'Ú')
- // glyph dot-unders
+ //  // glyph accents
+ //    .replace(/\^[i]/g, 'í').replace(/\^[I]/g, 'Í')
+ //    .replace(/\^[u]/g, 'ú').replace(/\^[U]/g, 'Ú')
+ //    .replace(/\^[a]/g, 'á').replace(/\^[A]/g, 'Ú')
+ // // glyph dot-unders
     .replace(/\.[h]/g, 'ḥ').replace(/(\s)\.[H]/g, '$1Ḥ')
     .replace(/\.[s]/g, 'ṣ').replace(/(\s)\.[S]/g, '$1Ṣ')
     .replace(/\.[d]/g, 'ḍ').replace(/(\s)\.[D]/g, '$1Ḍ')
     .replace(/\.[t]/g, 'ṭ').replace(/(\s)\.[T]/g, '$1Ṭ')
   // glyph style ayn and hamza
-    .replace(/\\6/g, '‘').replace(/\\9/g, '’')
+    .replace(/\\6/g, '‘').replace(/\\9/g, '’')    
+   // replace page marker
+    .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')    
+    
+  html = bahaiAutocorrect.correct(html) 
+  
+  html = md.render(html)
+
+
    // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)
     .replace(/([^\\])\'([\S])/g, '$1‘$2') .replace(/([^\\])\'/g, '$1’')
-   // replace page marker
-    .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')
+    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
+
     
   ilm.html_body = html
   ilm.html = html

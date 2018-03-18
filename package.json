@@ -15,7 +15,7 @@
   "author": "Chad Jones <chadananda@gmail.com> (http://bahai-education.org/)",
   "license": "ISC",
   "dependencies": {
-    "bahai-autocorrect": "^1.0.1",
+    "bahai-autocorrect": "^1.0.2",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^1.2.1",
