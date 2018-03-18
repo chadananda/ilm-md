@@ -55,8 +55,10 @@ module.exports = function(markdownText) {
   delete(ilm.attrs.__content)
   var html = ilm.raw_content
   // replacements that must take place before MD parsing
-    // glyph underscores
-  html = html.replace(/_([kcgsdzt]h)[_]?/ig, '<u>$1</u>')
+  
+  
+  // glyph underscores
+  html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
     .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
   
   html = md.render(html)
