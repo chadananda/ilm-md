@@ -59,8 +59,7 @@ module.exports = function(markdownText) {
   html = html.replace(/_([kcgsdzt]h)[_]?/ig, '<u>$1</u>')
     .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
   
-  
-  html = md.render(ilm.raw_content)
+  html = md.render(html)
 
   // glyph accents
     .replace(/\^[i]/g, 'í').replace(/\^[I]/g, 'Í')
@@ -78,7 +77,6 @@ module.exports = function(markdownText) {
    // replace page marker
     .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')
     
-/**/
   ilm.html_body = html
   ilm.html = html
   return ilm
