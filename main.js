@@ -64,24 +64,30 @@ module.exports = function(markdownText) {
  //    .replace(/\^[i]/g, 'í').replace(/\^[I]/g, 'Í')
  //    .replace(/\^[u]/g, 'ú').replace(/\^[U]/g, 'Ú')
  //    .replace(/\^[a]/g, 'á').replace(/\^[A]/g, 'Ú')
- // // glyph dot-unders
-    .replace(/\.[h]/g, 'ḥ').replace(/(\s)\.[H]/g, '$1Ḥ')
-    .replace(/\.[s]/g, 'ṣ').replace(/(\s)\.[S]/g, '$1Ṣ')
-    .replace(/\.[d]/g, 'ḍ').replace(/(\s)\.[D]/g, '$1Ḍ')
-    .replace(/\.[t]/g, 'ṭ').replace(/(\s)\.[T]/g, '$1Ṭ')
+
   // glyph style ayn and hamza
     .replace(/\\6/g, '‘').replace(/\\9/g, '’')    
    // replace page marker
     .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')    
     
-  html = bahaiAutocorrect.correct(html) 
+
   
   html = md.render(html)
-
-
-   // fix un-fixed straight quotes (be careful, we are manipulating raw HTML)
+  
+    // (be careful, we are manipulating raw HTML)
+    // glyph dot-unders -- note, we have to do this after HTML to avoid "fixing" {.title} etc
+    .replace(/\.[h]/g, 'ḥ').replace(/(\s)\.[H]/g, '$1Ḥ')
+    .replace(/\.[s]/g, 'ṣ').replace(/(\s)\.[S]/g, '$1Ṣ')
+    .replace(/\.[d]/g, 'ḍ').replace(/(\s)\.[D]/g, '$1Ḍ')
+    .replace(/\.[t]/g, 'ṭ').replace(/(\s)\.[T]/g, '$1Ṭ')  
+    
+    // fix un-fixed straight quotes 
     .replace(/([^\\])\'([\S])/g, '$1‘$2') .replace(/([^\\])\'/g, '$1’')
-    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
+    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')    
+    
+
+  html = bahaiAutocorrect.correct(html) 
+
 
     
   ilm.html_body = html
