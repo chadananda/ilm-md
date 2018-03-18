@@ -50,7 +50,7 @@ hr {
   text-align: right; opacity: .75; font-size: .9em; font-style: italic;
 }
 .sit, .sitalcent {
-  text-align: left; opacity: .85; font-style: italic;
+  text-align: left; opacity: .85; font-style: italic; font-size: 90%;
 }
 .ed, .editor {
   text-align: left; opacity: .65; font-style: italic;
@@ -95,4 +95,6 @@ p[pnum][dir="rtl"]:before {
 .left {text-align: left;}
 .right {text-align: right;}
 .hidden {display: none;}
+
+.footnote-ref {color: gray; font-size: 50%;}
 
