@@ -71,6 +71,7 @@ p[pnum]::before {
   color: gray; 
 }
 .footnote-item p[pnum]::before { content: ''; }
+section.footnotes {display: none;}
 
 span[data-pg]::before {
   content: "pg " attr(data-pg);
