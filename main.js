@@ -12,6 +12,7 @@ var markdownItFootnote = require('markdown-it-footnote')
 var markdownItTableOfContents = require('markdown-it-toc-ilm') // my custom version
 var markdownItAnchor = require('markdown-it-anchor')
 var markdownItParnum = require('markdown-it-parnum')
+var bac = require('bahai-autocorrect')
 
 var md = require('markdown-it')({
     html: true,
@@ -58,8 +59,10 @@ module.exports = function(markdownText) {
   
   
   // glyph underscores
-  // html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
-  //   .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
+  html = html.replace(/([kcgsdzt])[_](h)/ig, '<u>$1$2</u>')
+    .replace(/<em>([kcgsdzt]h)<\/em>/ig, '<u>$1</u>')
+    
+  bac.correct(html) 
   
   html = md.render(html)
 
