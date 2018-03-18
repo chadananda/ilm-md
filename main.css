@@ -9,7 +9,7 @@ body {display: none;
 }
 p,hr,h1,h2,h3,h4,h5 {
   display: block; position: relative;
-  text-indent: 0; margin-left:1em; margin-right:2em;
+  text-indent: 0; margin-left:1em; margin-right:1em;
 }
 h2,h3,h4,h5 {opacity: .85; text-align: center;}
 
@@ -47,7 +47,7 @@ hr {
 
 .ref, .reference,.sit, .sitalcent, .ed, .editor, .sig, .signature {white-space: pre-line;}
 .ref, .reference {
-  text-align: right; opacity: .75; font-size: .9em; font-style: italic;
+  text-align: right; opacity: .75; font-size: .9em; font-style: italic; margin-top: -0.5em;
 }
 .sit, .sitalcent {
   text-align: left; opacity: .85; font-style: italic; font-size: 90%;
