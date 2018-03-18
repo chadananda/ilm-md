@@ -70,6 +70,7 @@ p[pnum]::before {
   font-style: normal;
   color: gray; 
 }
+.footnote-item p[pnum]::before { content: ''; }
 
 span[data-pg]::before {
   content: "pg " attr(data-pg);
