@@ -9,13 +9,13 @@
     "build_min": "browserify -g uglifyify main.js -o dist/ilm-md.min.js",
     "build_inline": "browserify -g uglifyify inline.js -o dist/ilm-md-inline.min.js",
     "build_inline_debug": "browserify --debug inline.js -o dist/ilm-md-inline-debug.js",
-    "build": "npm run build_min && npm run build_inline && npm run build_inline_debug",
+    "build": "npm run build_inline_debug",
     "start": "concurrently \"npm run watch\" \"reload -b\""
   },
   "author": "Chad Jones <chadananda@gmail.com> (http://bahai-education.org/)",
   "license": "ISC",
   "dependencies": {
-    "bahai-autocorrect": "^1.0.4",
+    "bahai-autocorrect": "^1.0.11",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^1.2.1",
