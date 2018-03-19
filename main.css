@@ -60,6 +60,7 @@ hr.large, hr.lg {
 .ref, .reference,.sit, .sitalcent, .ed, .editor, .sig, .signature {white-space: pre-line;}
 .ref, .reference {
   text-align: right; opacity: .75; font-size: .9em; font-style: italic; margin-top: -1em;
+  margin-right: 2em;
 }
 .sit, .sitalcent {
   text-align: left; opacity: .85; font-style: italic; font-size: 90%;
