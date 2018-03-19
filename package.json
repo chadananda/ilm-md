@@ -39,6 +39,9 @@
       "browserify-css"
     ]
   },
+  "browserify-css": { 
+    "inlineImages": true
+  },
   "watch": {
     "build_inline": "*.js,*.css,*.html"
   },
