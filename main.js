@@ -69,6 +69,8 @@ module.exports = function(markdownText) {
     .replace(/\\6/g, '‘').replace(/\\9/g, '’')    
    // replace page marker
     .replace(/\[pg\s?(.*?)\]/ig, '<span data-pg="$1"></span>')    
+   // replace large hr
+    .replace(/^[ ]*[=]{3}[ ]*$/ig, '<hr class="large" />')
     
 
   
