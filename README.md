@@ -82,9 +82,10 @@ This a paragraph with dropcaps and blockquote indent.
 
 * K_h, D_h, T_h, C_h and Z_h will be rendered as <u>Kh</u>
 
- 
+### Rule lines
 
-
+* Small rules can be done MD style like ---
+* Large rules can be done with a long line like --------- or a series of equal signs like ========
 
 
 
