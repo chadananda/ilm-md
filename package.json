@@ -1,6 +1,6 @@
 {
   "name": "ilm-md",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "ILM Markdown Parser",
   "main": "main.js",
   "scripts": {
@@ -16,8 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "bahai-autocorrect": "^1.0.13",
-    "markdown-it": "^8.4.1",
-    "markdown-it-anchor": "^4.0.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
     "markdown-it-attrs": "^1.2.1",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-inline-comments": "^1.0.1",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "browserify-css": "^0.14.0",
-    "concurrently": "^3.5.1",
+    "concurrently": "^3.6.1",
     "npm-watch": "^0.3.0"
   },
   "browserify": {
@@ -39,7 +39,7 @@
       "browserify-css"
     ]
   },
-  "browserify-css": { 
+  "browserify-css": {
     "inlineImages": true
   },
   "watch": {
